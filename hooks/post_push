@@ -1,0 +1,16 @@
+#!/bin/bash
+set -e
+
+tagStart=$(expr index "$IMAGE_NAME" :)
+repoName=${IMAGE_NAME:0:tagStart-1}
+tagName=$(echo ${SOURCE_BRANCH} | sed -e 's/v//g')
+versionArr=(${tagName//./ })
+majorVersion=${versionArr[0]}
+minorVersion=${versionArr[1]}
+patchVersion=${versionArr[2]}
+minorVersionTag="${majorVersion}.${minorVersion}"
+
+for tag in {$tagName,$minorVersionTag}; do
+  docker tag $IMAGE_NAME ${repoName}:${tag}
+  docker push ${repoName}:${tag}
+done
