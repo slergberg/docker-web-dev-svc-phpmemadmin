@@ -1,0 +1,175 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "38a11126a03bce044a71e26cf88f9a1a",
+    "packages": [
+        {
+            "name": "clickalicious/memcached.php",
+            "version": "v0.4.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/clickalicious/memcached-php.git",
+                "reference": "96e2978284cac3749a79bfde3f1f99731ae9c504"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/clickalicious/memcached-php/zipball/96e2978284cac3749a79bfde3f1f99731ae9c504",
+                "reference": "96e2978284cac3749a79bfde3f1f99731ae9c504",
+                "shasum": ""
+            },
+            "require-dev": {
+                "satooshi/php-coveralls": "dev-master"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Clickalicious": "lib/",
+                    "Psr": "lib/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "include-path": [
+                "lib/"
+            ],
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Benjamin Carl",
+                    "email": "opensource@clickalicious.de",
+                    "homepage": "http://www.clickalicious.de",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Memcached.php - Plain vanilla PHP Memcached client with full support of Memcached protocol.",
+            "homepage": "https://github.com/clickalicious/Memcached.php",
+            "keywords": [
+                "clickalicious",
+                "client",
+                "memcached",
+                "php"
+            ],
+            "time": "2015-02-15T03:11:07+00:00"
+        },
+        {
+            "name": "clickalicious/phpmemadmin",
+            "version": "v0.3.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/clickalicious/phpmemadmin.git",
+                "reference": "d17be3164332d06f10eca0213a4bd1e51ac571d5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/clickalicious/phpmemadmin/zipball/d17be3164332d06f10eca0213a4bd1e51ac571d5",
+                "reference": "d17be3164332d06f10eca0213a4bd1e51ac571d5",
+                "shasum": ""
+            },
+            "require": {
+                "clickalicious/memcached.php": "~0.4",
+                "php": ">=5.3.0",
+                "wp-cli/php-cli-tools": "~0.10"
+            },
+            "require-dev": {
+                "satooshi/php-coveralls": "dev-master"
+            },
+            "type": "project",
+            "autoload": {
+                "psr-4": {
+                    "Clickalicious\\PhpMemAdmin\\": "lib/Clickalicious/PhpMemAdmin/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "include-path": [
+                "lib/"
+            ],
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Benjamin Carl",
+                    "email": "opensource@clickalicious.de",
+                    "homepage": "http://www.clickalicious.de",
+                    "role": "Developer"
+                }
+            ],
+            "description": "phpMemAdmin - Bringing Memcached to the web",
+            "homepage": "https://github.com/clickalicious/phpMemAdmin",
+            "keywords": [
+                "admin",
+                "clickalicious",
+                "client",
+                "cluster",
+                "management",
+                "memcached",
+                "php",
+                "phpmyadmin",
+                "pool"
+            ],
+            "time": "2015-03-08T00:35:13+00:00"
+        },
+        {
+            "name": "wp-cli/php-cli-tools",
+            "version": "v0.11.11",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/wp-cli/php-cli-tools.git",
+                "reference": "fe9c7c44a9e1bf2196ec51dc38da0593dbf2993f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/wp-cli/php-cli-tools/zipball/fe9c7c44a9e1bf2196ec51dc38da0593dbf2993f",
+                "reference": "fe9c7c44a9e1bf2196ec51dc38da0593dbf2993f",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">= 5.3.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "cli": "lib/"
+                },
+                "files": [
+                    "lib/cli/cli.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "James Logsdon",
+                    "email": "jlogsdon@php.net",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Daniel Bachhuber",
+                    "email": "daniel@handbuilt.co",
+                    "role": "Maintainer"
+                }
+            ],
+            "description": "Console utilities for PHP",
+            "homepage": "http://github.com/wp-cli/php-cli-tools",
+            "keywords": [
+                "cli",
+                "console"
+            ],
+            "time": "2018-09-04T13:28:00+00:00"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": [],
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": []
+}

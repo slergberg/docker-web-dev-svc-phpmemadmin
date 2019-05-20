@@ -1,5 +1,5 @@
 {
-  "name": "phpmemadmin",
+  "name": "webdevsvc/phpmemadmin",
   "description": "phpMemAdmin",
   "require": {
     "clickalicious/phpmemadmin": "~0.3"
