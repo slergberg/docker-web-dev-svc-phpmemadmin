@@ -35,7 +35,7 @@ RUN curl -sS https://getcomposer.org/installer | php \
   && composer global require hirak/prestissimo
 
 # Application files
-ADD composer.json /application/composer.json
+ADD composer.json composer.lock /application/
 WORKDIR /application
 RUN composer install --no-interaction --no-scripts --quiet \
   && cp -R /application/vendor/clickalicious/phpmemadmin/app /application/ \
