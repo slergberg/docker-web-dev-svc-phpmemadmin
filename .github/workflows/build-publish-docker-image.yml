@@ -8,36 +8,25 @@ on:
     - cron: 0 0 * * *
 
 jobs:
-  build:
+  build-and-publish-to-docker-hub-registry:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
 
       - name: Build the Docker image
-        uses: actions/docker/cli@master
-        with:
-          args: build --file Dockerfile --tag ${DOCKER_IMAGE_NAME} .
+        run: docker build --file Dockerfile --tag ${DOCKER_ORGANIZATION_NAME}/${DOCKER_IMAGE_NAME} .
         env:
-          DOCKER_IMAGE_NAME: phpmemadmin
+          DOCKER_ORGANIZATION_NAME: ${{ secrets.DOCKER_ORGANIZATION_NAME }}
+          DOCKER_IMAGE_NAME: ${{ secrets.DOCKER_IMAGE_NAME }}
 
-      - name: Tag the Docker image
-        uses: actions/docker/tag@master
-        with:
-          args: ${DOCKER_IMAGE_NAME} ${DOCKER_ORGANIZATION_NAME}/${DOCKER_IMAGE_NAME}
+      - name: Login to Docker Hub registry
+        run: docker login --username ${DOCKER_USERNAME} --password ${DOCKER_PASSWORD}
         env:
-          DOCKER_ORGANIZATION_NAME: webdevsvc
-          DOCKER_IMAGE_NAME: phpmemadmin
-
-      - name: Login to Docker Hub
-        uses: actions/docker/login@master
-        env:
-          DOCKER_PASSWORD: ${{ secrets.DOCKER_HUB_PASSWORD }}
           DOCKER_USERNAME: ${{ secrets.DOCKER_HUB_USERNAME }}
+          DOCKER_PASSWORD: ${{ secrets.DOCKER_HUB_PASSWORD }}
 
-      - name: Publish the image to Docker Hub
-        uses: actions/docker/cli@master
-        with:
-          args: push ${DOCKER_ORGANIZATION_NAME}/${DOCKER_IMAGE_NAME}:latest
+      - name: Publish the image to Docker Hub registry
+        run: docker push ${DOCKER_ORGANIZATION_NAME}/${DOCKER_IMAGE_NAME}:latest
         env:
-          DOCKER_ORGANIZATION_NAME: webdevsvc
-          DOCKER_IMAGE_NAME: phpmemadmin
+          DOCKER_ORGANIZATION_NAME: ${{ secrets.DOCKER_ORGANIZATION_NAME }}
+          DOCKER_IMAGE_NAME: ${{ secrets.DOCKER_IMAGE_NAME }}
