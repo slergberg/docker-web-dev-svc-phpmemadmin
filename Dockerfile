@@ -1,5 +1,5 @@
 # Base image
-FROM php:7.3.10-apache
+FROM php:7.3.11-apache
 
 # Base system dependencies
 ARG DEBIAN_FRONTEND=noninteractive
