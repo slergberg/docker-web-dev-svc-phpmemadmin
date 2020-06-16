@@ -1,0 +1,23 @@
+name: build-publish
+
+env:
+  DOCKER_IMAGE_NAME: webdevsvc/phpmemadmin
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build-publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout source code
+        uses: actions/checkout@v2.2.0
+      - name: Build and Push the Docker image
+        uses: docker/build-push-action@v1.1.0
+        with:
+          repository: ${{ env.DOCKER_IMAGE_NAME }}
+          tags: latest
+          password: ${{ secrets.DOCKER_HUB_PASSWORD }}
+          username: ${{ secrets.DOCKER_HUB_USERNAME }}
